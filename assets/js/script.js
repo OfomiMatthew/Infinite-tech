@@ -61,10 +61,6 @@ addEventListener('resize',removeStyle)
 
 
 
-
-
-
-
 // === Scrolling Animation ====
 const scrollers = document.querySelectorAll('.scroller')
 
@@ -77,3 +73,16 @@ function addAnimation(){
     scroller.setAttribute("data-animated",true)
   })
 }
+
+
+// ==== PRE-LOADER FUNCTION ======
+let loader = document.getElementById("preloader")
+
+setTimeout(()=>{
+  window.addEventListener("load",function(){
+    loader.style.display = "none";
+  })
+},100)
+
+
+

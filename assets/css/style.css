@@ -1160,33 +1160,16 @@ ul{
 }
 
 
-/* === LOADER === */
-/* .pre-loader{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pre-loader .loader{
+#preloader{
+  background: #000 url('../images/circle-loader.gif') no-repeat center center;
   height: 100vh;
-  width: 150px;
-  border: 10px solid #fff;
-  border-radius: 50%;
-  border-right-color: skyblue;
-  animation: spin 3s linear infinite;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-size: 15%;
 }
 
-@keyframes spin{
-  0%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate();
-  }
-} */
+
+iframe{
+  display: none;
+}
