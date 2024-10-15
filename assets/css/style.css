@@ -4,9 +4,16 @@
   --header-height: 3.5rem;
   /*========== Colors ==========*/
   /*Color mode HSL(hue, saturation, lightness)*/
-  --first-color: hsl(220, 68%, 54%);
+  /* --first-color: hsl(220, 68%, 54%); */
+/* --first-color: #abab9a; */
+--first-color: #f0bf6a;
+
+
+
   --first-color-lighten: hsl(220, 68%, 97%);
-  --title-color: hsl(220, 48%, 28%);
+  /* --title-color: hsl(220, 48%, 28%); */
+
+  --title-color: #000;
   --text-color: hsl(220, 12%, 45%);
   --body-color: hsl(220, 100%, 99%);
   --container-color: hsl(0, 0%, 100%);
@@ -824,12 +831,12 @@ input:checked + label .description {
 
 .service:hover {
   background-color: #000;
-  color: var(--text-color);
+  color: var(--first-color);
   transform: scale(1.05);
 }
 
 .service:hover i {
-  color: var(--text-color);
+  color: var(--first-color);
 }
 
 /* === MOBILE RESPONSIVENESS FOR WHY CHOSE US PART ===== */
@@ -1112,15 +1119,13 @@ ul{
 }
 
 .footer-col ul li a:hover{
-  color: #fff;
+  color: var(--first-color);
   padding-left: 8px;
 
 }
 
 .footer-col ul li a:hover::before{
- content:"↗️ ";
- 
-  
+ content:"↗ ";
 }
 
 
@@ -1139,7 +1144,7 @@ ul{
 
 .footer-col .social-links a:hover{
   color: #24262b;
-  background-color: #fff;
+  background-color: var(--first-color);
  
 }
 
@@ -1172,4 +1177,15 @@ ul{
 
 iframe{
   display: none;
+  
 }
+
+
+/* === TESTIMONIAL STYLE  === */
+
+.slider-container img{
+  width: 50px;
+  border-radius: 50%;
+}
+
+
