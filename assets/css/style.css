@@ -109,7 +109,9 @@ a {
 
 .nav a:hover{
   color: var(--first-color);
+  transition: 0.3s ease-in-out;
 }
+
 
 .nav__toggle {
   position: relative;
@@ -132,6 +134,56 @@ a {
 .nav__toggle-close {
   opacity: 0;
 }
+
+
+
+/* ==== MENU UNDERLINE HOVER EFFECT */
+
+/* Basic nav link styles */
+.nav__link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #333; /* Adjust color as needed */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Add a pseudo-element for the underline */
+.nav__link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  margin-bottom: 23px;
+  left: 0;
+  background-color: #000; /* Adjust color as needed */
+  transition: width 0.3s ease-in-out;
+
+}
+
+/* On hover, animate the underline */
+.nav__link:hover::after {
+  width: 100%;
+}
+
+/* Optional: Change text color on hover */
+.nav__link:hover {
+  color: #000; /* Adjust hover color if you want */
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* Remove the underline hover effect for mobile */
+  .nav__link::after {
+    content: none; /* This removes the underline on small screens */
+  }
+}
+
+
 
 
 
@@ -409,8 +461,8 @@ a {
   align-items: flex-end;
   transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
-  opacity: 0; /* Initially hidden */
-  transform: translateY(50px); /* Initially move it down */
+  opacity: 0; 
+  transform: translateY(50px); 
   animation: fadeInUp 1s ease-out forwards;
 }
 
@@ -421,8 +473,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity here */
-  z-index: 1; /* Ensure overlay is on top of the background image */
+  background-color: rgba(0, 0, 0, 0.7); 
+  z-index: 1; 
 }
 
 /* Fade-in and move up animation */
@@ -458,7 +510,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  /* overflow: hidden; */
+ 
   height: 80px;
   width: 520px;
   opacity: 0;
@@ -475,6 +527,9 @@ a {
 
 .description h4 {
   text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--first-color);
 }
 
 input {
@@ -482,7 +537,7 @@ input {
 }
 
 input:checked + label {
-  width: 600px;
+  width: 700px;
 }
 
 input:checked + label .description {
@@ -491,33 +546,36 @@ input:checked + label .description {
 }
 
 .card[for="c1"] {
-  background-image: url(../images/tech-img.jpg);
+  background-image: url(../images/deliver.jpg);
 }
 
 .card[for="c2"] {
-  background-image: url(../images/tech2.jpeg);
+  background-image: url(../images/data.jpg);
 }
 
 .card[for="c3"] {
-  background-image: url(../images/tech3.jpeg);
+  background-image: url(../images/finance.jpg);
 }
 
 .card[for="c4"] {
-  background-image: url(../images/ai-1.jpg);
+  background-image: url(../images/energy.jpg);
 }
 
 .card[for="c5"] {
-  background-image: url(../images/89350.jpg);
+  background-image: url(../images/media2.jpg);
 }
 
 .card[for="c6"] {
-  background-image: url(../images/ai-2.jpg);
+  background-image: url(../images/health.jpg);
 }
 
 .card > .row {
   position: relative;
-  z-index: 2; /* Ensures content stays above the background overlay */
+  z-index: 2; 
 }
+
+
+
 
 /* === WHAT WE DO SECTION ===== */
 .work-body {
@@ -1154,7 +1212,8 @@ iframe{
 .about-sub-header{
   height: 60vh;
   width: 100%;
-  background-image:linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.9)),url('../images/gif-launch.gif');
+  /* background-image:linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.9)),url('../images/world.gif'); */
+  background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url('../images/world.gif');
   background-position: center;
   background-size: cover;
   display: flex;
@@ -1171,6 +1230,7 @@ iframe{
   align-items: center;
   font-size: 2.2rem;
   font-weight: 500;
+  animation: fadeInUp 2s ease;
 }
 
 .about-us{
@@ -1383,28 +1443,6 @@ iframe{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .course-col i{
   font-size: 30px;
   color: var(--first-color);
@@ -1456,4 +1494,115 @@ iframe{
   .course-col {
     padding: 15px 10px;
   }
+}
+
+
+/* ==== CONTACT US ==== */
+
+
+/* === CONTACT US SUB-SECTION ==== */
+
+
+.contact-us {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.row-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-col {
+  flex-basis: 48%;
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.contact-col div i {
+  font-size: 28px;
+  color: var(--first-color);
+  margin-right: 20px;
+}
+
+.contact-col div h5 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.contact-col div p {
+  padding: 0;
+}
+
+.input{
+  display: block;
+}
+
+.input, .contact-col textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+}
+
+.submit-btn {
+  background: var(--first-color);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  color: var(--first-color);
+  background: #fff;
+  
+}
+
+.contact-col-1{
+  animation: fadeInUp 2s ease;
+}
+
+.contact-col-2{
+  animation: fadeInRight 2s ease;
+}
+
+
+
+
+
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  .row-contact {
+    flex-direction: column;
+  }
+
+  .contact-col {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.input, textarea{
+  font-family: var(--body-font);
 }
