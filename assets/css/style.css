@@ -1784,8 +1784,54 @@ textarea {
 /* ==== TECHNOLOGY WE USE SECTION ===== */
 
 
+/* .logos-slide{
+  display: inline-block;
+}
+.logos-slide img{
+  height: 50px;
+  margin: 0 40px 40px;
+  
+
+} */
 
 
+
+.logos {
+  overflow: hidden;
+  width: 100%;
+}
+
+.logos-slide {
+  display: inline-block; /* Keeping your original display */
+}
+
+.logos-slide img {
+  height: 70px;
+  margin: 0 40px 40px;
+  filter: grayscale(100%); /* Make the image gray initially */
+  transition: filter 0.3s ease; 
+}
+
+.logos-slide img:hover {
+  cursor: pointer;
+  filter: grayscale(0%); /* Remove the grayscale to show the original image */
+}
+
+/* Mobile responsiveness for tablets */
+@media screen and (max-width: 768px) {
+  .logos-slide img {
+    height: 40px; /* Reduce image height for tablets */
+    margin: 0 20px 30px; /* Reduce the margin to fit better */
+  }
+}
+
+/* Mobile responsiveness for smaller devices (phones) */
+@media screen and (max-width: 480px) {
+  .logos-slide img {
+    height: 30px; /* Further reduce image height for phones */
+    margin: 0 10px 20px; /* Further reduce the margin */
+  }
+}
 
 
 
