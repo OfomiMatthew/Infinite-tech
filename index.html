@@ -18,200 +18,181 @@
   </head>
   <body>
 
-    <!-- === PRELOADER === -->
-    <div id="preloader">
-     
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI?si=n8_r41i_CTeAVrKJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Yf5d_Zx3AaI?si=n8_r41i_CTeAVrKJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    </div>
-
-
+   
     <!-- === NAVIGATION === -->
-    <header class="header">
-      <nav class="nav container">
-        <div class="nav__data">
-          <a href="" class="nav__logo">
-            Infinite-Tech
-            <i class="ri-code-box-line"></i>
-          </a>
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line nav__toggle-menu"></i>
-            <i class="ri-close-line nav__toggle-close"></i>
-          </div>
-        </div>
-                <!-- ==== nav menu == -->
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li>
-              <a href="index.html" class="nav__link">Home</a>
-            </li>
-            <!-- ==== dropdown 1 === -->
-            <li class="dropdown__item">
-              <div class="nav__link dropdown__button service-link">
-                Services<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-              </div>
+   
+    <div class="toggle" id="navToggle">
+      <span class="hamburger">&#9776;</span>
+      <span class="close" style="display: none;">&times;</span>
 
-              <div class="dropdown__container">
-                <div class="dropdown__content">
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-shield-flash-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Most viewed services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Web Application </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Mobile Application (Android, iOS, Cross-Platform)</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">UI/UX design</a>
-                      </li>
-                     
-                     
+     
+  </div>
+
+
+
+    <!-- Navigation Area -->
+
+    
+    <ul class="nav-area" id="navArea">
+        <!-- Navigation Items -->
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">Services</a>
+            <div class="sub-nav">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="#">Web App</a></li>
+                        <li><a href="#">Mobile App (Android, iOS, Cross-Platform)</a></li>
+                        <li><a href="#">UI/UX design</a></li>
+                        <li><a href="#">MVP development and re-engineering</a></li>
+                        <li><a href="#">Cloud Development and Migration</a></li>
+                        <li><a href="#">Software Prototyping and Audit</a></li>
+                        <li><a href="#">Penetration Testing</a></li>
+                        <li><a href="#">AI Consulting (Generative AI, Machine Learning, Conversational AI)</a></li>
+                        <li><a href="#">ChatBot Development</a></li>
+                        <li><a href="#">Outsourcing Team</a></li>
                     </ul>
-                  </div>
-
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-hand-heart-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Popular Services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">MVP development and re-engineering </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Cloud Development and Migration </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Software prototyping and Audit </a>
-                      </li>
-                      
-                    </ul>
-                  </div>
-
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-codepen-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Consulting Services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Penetration Testing </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">AI Consulting (Generative AI & Machine Learning)</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Chat Box development </a>
-                      </li>
-                     
-                    </ul>
-                  </div>
-
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-terminal-window-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Outsource Services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Outsourcing Team</a>
-                      </li>
-                      
-                    </ul>
-                  </div>
-
                 </div>
-              </div>
-            </li>
-            <!-- ==== dropdown 2 -->
-            <!-- <li class="dropdown__item">
-              <div class="nav__link dropdown__button">
-                Industries<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-              </div>
-              <div class="dropdown__container">
-                <div class="dropdown__content">
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-base-station-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Sectors</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Healthcare </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Travel and Leisure</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Restaurants</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Fintech</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Others</a>
-                      </li>
+            </div>
+        </li>
+        <li><a href="#">About Us</a></li>
+        <li>
+            <a href="#">Industries</a>
+            <div class="sub-nav">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Travel and Leisure</a></li>
+                        <li><a href="#">Restaurants</a></li>
+                        <li><a href="#">Fintech</a></li>
+                        <li><a href="#">Others</a></li>
                     </ul>
-                  </div>
                 </div>
-              </div>
-            </li> -->
-
-            
-           
-            <!-- === dropdown 3 -->
-            <!-- <li class="dropdown__item">
-              <div class="nav__link dropdown__button">
-                Resources<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-              </div>
-              <div class="dropdown__container">
-                <div class="dropdown__content">
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-android-fill"></i>
-                    </div>
-                    <span class="dropdown__title">App Development</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Fintech software development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Trading platform development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Lending software development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">E-wallet app development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Banking software development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Crowdfunding platform development</a>
-                      </li>
+            </div>
+        </li>
+        <li>
+            <a href="#">Resources</a>
+            <div class="sub-nav">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="#">Blog1</a></li>
+                        <li><a href="#">Blog2</a></li>
+                        <li><a href="#">Blog3</a></li>
+                        <li><a href="#">Blog4</a></li>
+                        <li><a href="#">Blog5</a></li>
                     </ul>
-                  </div>
                 </div>
-              </div>
-            </li> -->
+            </div>
+        </li>
+        <li><a href="#">Contact</a></li>
+    
+        <!-- Logo on the Right Side -->
+        
+    </ul>
 
-            <li>
-              <a href="about.html" class="nav__link">About us</a>
-            </li>
-            <li>
-              <a href="contact.html" class="nav__link">Contact us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      
-    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -467,6 +448,7 @@
         </div>
       </div>
   </footer>
+
 
 
     <script src="assets/js/script.js"></script>

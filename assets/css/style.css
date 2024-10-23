@@ -48,6 +48,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  overflow-x: hidden;
 }
 
 ul {
@@ -58,366 +59,334 @@ a {
   text-decoration: none;
 }
 
-.container {
-  max-width: 1120px;
 
-  margin-inline: 1.5rem;
+
+/* === NAVIGATION ==== */
+
+/* Toggle button styles */
+.toggle {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #313131;
+  padding: 10px;
+  position: fixed; /* Make it fixed */
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
 }
 
-/* ----HEADER--------- */
-
-.header {
+/* Navigation area */
+.nav-area {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 2px 8px hsla(220, 68%, 12%, 0.1);
-  background-color: var(--body-color);
-  z-index: var(--z-fixed);
-}
-
-/* ---------=== NAV ===----------- */
-.nav {
-  height: var(--header-height);
-}
-
-.nav__data {
+  left: -250px;
+  width: 250px;
+  background-color: #000;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 20px 0;
+  font-family: Futura;
+  font-size: 2.5rem;
 }
 
-.nav__logo {
-  display: inline-flex;
-  align-items: center;
-  column-gap: 0.25rem;
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-  transition: color 0.3s;
-}
-
-.nav__logo i {
-  font-size: 1.25rem;
-}
-
-.nav__logo:hover {
-  color: var(--first-color);
-}
-
-.nav a:hover {
-  color: var(--first-color);
-  transition: 0.3s ease-in-out;
-}
-
-.nav__toggle {
-  position: relative;
-  width: 32px;
-  height: 32px;
-}
-
-.nav__toggle-menu,
-.nav__toggle-close {
-  font-size: 1.25rem;
-  color: var(--title-color);
-  position: absolute;
-  display: grid;
-  place-items: center;
-  inset: 0;
-  cursor: pointer;
-  transition: opacity 0.1s, transform 0.4s;
-}
-
-.nav__toggle-close {
-  opacity: 0;
-}
-
-/* ==== MENU UNDERLINE HOVER EFFECT */
-
-/* Basic nav link styles */
-.nav__link {
-  position: relative;
-  display: inline-block;
-  padding: 10px 15px;
-  color: #333; /* Adjust color as needed */
+/* Navigation links */
+.nav-area a {
+  color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  display: block;
+  padding: 15px;
+  text-align: center;
 }
 
-/* Add a pseudo-element for the underline */
-.nav__link::after {
-  content: "";
+/* Hover effects */
+.nav-area a:hover {
+  background-color: #f0bf6a;
+  color: #fff;
+}
+
+/* Menu item hover */
+.nav-area li:hover > a {
+  background-color: #f0bf6a;
+}
+
+
+
+/* Sub-menu container */
+.nav-area > li > .sub-nav {
   position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 0;
-  margin-bottom: 23px;
-  left: 0;
-  background-color: #000; /* Adjust color as needed */
-  transition: width 0.3s ease-in-out;
-}
-
-/* On hover, animate the underline */
-.nav__link:hover::after {
-  width: 100%;
-}
-
-/* Optional: Change text color on hover */
-.nav__link:hover {
-  color: #000; /* Adjust hover color if you want */
-}
-
-@media only screen and (max-width: 768px) {
-  /* Remove the underline hover effect for mobile */
-  .nav__link::after {
-    content: none; /* This removes the underline on small screens */
-  }
-}
-
-/* -------- ====== MOBILE NAV ===== ----- */
-@media screen and (max-width: 1118px) {
-  .nav__menu {
-    background-color: var(--body-color);
-    position: absolute;
-    left: 0;
-    top: 2.5rem;
-    width: 100%;
-    height: calc(100vh - 3.5rem);
-    overflow: auto;
-    padding-block: 1.5rem 4rem;
-    pointer-events: none;
-    opacity: 0;
-    transition: top 0.4s, opacity 0.3s;
-  }
-}
-
-.nav__link {
-  color: var(--title-color);
-  font-weight: var(--font-semi-bold);
-  padding: 1.25rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: background-color 0.3s;
-}
-
-.nav__link:hover {
-  background-color: var(--first-color-lighten);
-}
-
-.show-menu {
-  opacity: 1;
-  top: 3.5rem;
-  pointer-events: initial;
-}
-
-.show-icon .nav__toggle-menu {
-  opacity: 0;
-  transform: rotate(90deg);
-}
-
-.show-icon .nav__toggle-close {
-  opacity: 1;
-  transform: rotate(90deg);
-}
-
-.dropdown__button {
-  cursor: pointer;
-}
-
-.dropdown__arrow {
   font-size: 1.5rem;
-  font-weight: initial;
-  transition: transform 0.4s;
+  
+  top: 0;
+  left: 250px;
+  width: 400px;
+  max-height: 100vh; /* Set a fixed height */
+  opacity: 0;
+  visibility: hidden;
+  background-color: #000;
+  z-index: 1000;
+  transition: opacity 0.3s, visibility 0.3s;
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
 }
 
-.dropdown__content,
-.dropdown__group,
-.dropdown__list {
-  display: grid;
+
+
+
+
+.nav-area > li:hover .sub-nav {
+  opacity: 1;
+  visibility: visible;
 }
 
-.dropdown__container {
-  background-color: var(--first-color-lighten);
-  height: 0;
-  overflow: hidden;
-  transition: height 0.4s;
+/* Sub-menu items */
+.sub-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.dropdown__content {
-  row-gap: 1.75rem;
+.sub-menu ul li {
+  padding: 10px;
 }
 
-.dropdown__group {
-  padding-left: 2.5rem;
-  row-gap: 0.5rem;
+.sub-menu ul li a {
+  color: #fff;
 }
 
-.dropdown__group:first-child {
-  margin-top: 1.25rem;
+.sub-menu ul li a:hover {
+  background-color: #f0bf6a;
+  color: #fff;
 }
 
-.dropdown__group:last-child {
-  margin-bottom: 1.25rem;
+/* Position logo on the right */
+.nav-logo {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
 }
 
-.dropdown__icon {
-  font-size: 1.25rem;
-  color: var(--first-color);
+.logo {
+  width: 100px;
+  height: auto;
 }
 
-.dropdown__title {
-  font-size: var(--small-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
+/* Active nav toggle effect */
+.nav-active {
+  left: 0; /* Show menu when active */
 }
 
-.dropdown__list {
-  row-gap: 0.25rem;
+/* Toggle icon visibility */
+.hamburger {
+  display: inline;
 }
 
-.dropdown__link {
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-medium);
-  color: var(--text-color);
-  transition: color 0.3s;
+.close {
+  display: none;
 }
 
-.dropdown__link:hover {
-  color: var(--title-color);
+/* Show close icon when nav is active */
+.nav-active .hamburger {
+  display: none;
 }
 
-.show-dropdown .dropdown__arrow {
-  transform: rotate(180deg);
+.nav-active .close {
+  display: inline;
 }
 
-/* ==== small device======= */
-
-@media screen and (max-width: 300px) {
-  .dropdown__group {
-    padding-left: 1.5rem;
-  }
-}
-
-/* ==== large screen====== */
-
-@media screen and (min-width: 1118px) {
-  .nav {
-    height: calc(var(--header-height) + 2rem);
-    display: flex;
-    justify-content: space-between;
+/* Styles for mobile devices */
+@media (max-width: 480px) {
+  .nav-area {
+    width: 100%; /* Full width on mobile */
+    left: -100%; /* Hide off-screen initially */
+    transition: left 0.3s ease; /* Smooth transition for the menu */
   }
 
-  .nav__toggle {
-    display: none;
+  .nav-active {
+    left: 0; /* Show the menu when active */
   }
 
-  .nav__list {
-    display: flex;
-    column-gap: 3rem;
-    height: 100%;
+  .nav-area > li {
+    text-align: left; /* Align text to the left for mobile */
   }
 
-  .nav li {
-    display: flex;
+  .nav-area > li > a {
+    padding: 20px; /* Adjust padding for mobile */
   }
 
-  .nav__link {
-    padding: 0;
+  .nav-area .sub-nav {
+    position: relative; /* Reset positioning for sub-menu */
+    margin-top: 0; /* Remove margin */
   }
 
-  .nav__link:hover {
-    background-color: initial;
+  .nav-area .sub-menu ul {
+    padding: 0 20px; /* Add some padding */
   }
 
-  /* ------- ===== Dropdown ====== ------ */
-  .dropdown__button {
-    column-gap: 0.25rem;
-    pointer-events: none;
-  }
-
-  .dropdown__container {
-    height: max-content;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 6.5rem;
-    background-color: var(--body-color);
-    box-shadow: 0 6px 8px hsla(220, 68%, 12%, 0.05);
-    pointer-events: none;
-    opacity: 0;
-    transition: top 0.4s, opacity 0.3s;
-  }
-  .dropdown__content {
-    grid-template-columns: repeat(4, max-content);
-    column-gap: 6rem;
-    max-width: 1120px;
-    margin-inline: auto;
-  }
-  .dropdown__group {
-    padding: 4rem 0;
-    align-content: baseline;
-    row-gap: 1.25rem;
-  }
-  .dropdown__group:first-child,
-  .dropdown__group:last-child {
-    margin: 0;
-  }
-
-  .dropdown__list {
-    row-gap: 0.75rem;
-  }
-
-  .dropdown__icon {
-    width: 60px;
-    height: 60px;
-    background-color: var(--first-color-lighten);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .dropdown__icon i {
-    font-size: 2rem;
-  }
-
-  .dropdown__title {
-    font-size: var(--normal-font-size);
-  }
-
-  .dropdown__link {
-    font-size: var(--small-font-size);
-  }
-
-  .dropdown__link:hover {
-    color: var(--first-color);
-  }
-
-  .dropdown__item {
-    cursor: pointer;
-  }
-
-  /* ===== rotate dropdown icon ===== */
-  .dropdown__item:hover .dropdown__arrow {
-    transform: rotate(180deg);
-  }
-
-  /* ===== show dropdown menu ===== */
-  .dropdown__item:hover > .dropdown__container {
-    top: 5.5rem;
-    opacity: 1;
-    pointer-events: initial;
-    cursor: initial;
+  /* Adjust the toggle button */
+  .toggle {
+    position: fixed; /* Fix the toggle icon position */
+    top: 10px; /* Align it at the top */
+    left: 10px; /* Position it on the left */
+    z-index: 1001; /* Above the menu */
+    cursor: pointer; /* Show pointer cursor */
+    color: #fff; /* Change color as needed */
   }
 }
 
-@media screen and (min-width: 1152px) {
-  .container {
-    margin-inline: auto;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---- ====== HERO SECTION ====== ------- */
 
@@ -1146,7 +1115,7 @@ ul {
     /* margin-bottom: 30px; */
   }
 }
-
+/* 
 #preloader {
   background: #000 url("../images/circle-loader.gif") no-repeat center center;
   height: 100vh;
@@ -1154,7 +1123,7 @@ ul {
   position: fixed;
   z-index: 999;
   background-size: 15%;
-}
+} */
 
 iframe {
   display: none;
@@ -1174,7 +1143,7 @@ iframe {
   width: 100%;
   /* background-image:linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.9)),url('../images/world.gif'); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../images/tech.jpg");
+    url("../images/web-dev-meet.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -1510,7 +1479,7 @@ iframe {
   border-radius: 5px;
 }
 
-.submit-btn {
+/* .submit-btn {
   background: var(--first-color);
   color: #fff;
   padding: 12px 20px;
@@ -1525,7 +1494,40 @@ iframe {
 .submit-btn:hover {
   color: var(--first-color);
   background: #fff;
+} */
+
+
+
+.submit-btn {
+  background: var(--first-color);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
 }
+
+.submit-btn:hover {
+  color: var(--first-color);
+  background: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .contact-col-1 {
   animation: fadeInUp 2s ease;
@@ -1534,6 +1536,67 @@ iframe {
 .contact-col-2 {
   animation: fadeInRight 2s ease;
 }
+
+
+
+
+
+
+/* Base styling for input and textarea */
+.input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
+}
+
+/* Placeholder styling */
+.input::placeholder,
+textarea::placeholder {
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animates the placeholder */
+  opacity: 0.8; /* Initial opacity */
+  transform: translateX(0); /* Initial position */
+}
+
+/* Placeholder animation on input or textarea focus */
+.input:focus::placeholder,
+textarea:focus::placeholder {
+  transform: translateX(10px); /* Moves placeholder 10px to the right on focus */
+  opacity: 0.5; /* Optional: reduce opacity on focus */
+}
+
+/* Optional: styling for focused input and textarea borders */
+.input:focus,
+textarea:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: var(--first-color); /* Change border color on focus */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
@@ -1589,18 +1652,18 @@ textarea {
 
 @media only screen and (max-width: 768px) {
   .home h2 {
-    font-size: 2.5rem; /* Slightly reduce font size for tablets */
+    font-size: 1.6rem; /* Slightly reduce font size for tablets */
   }
 
   .home p {
     width: 70%; /* Increase width to take more space */
-    font-size: 1rem; /* Adjust the font size for better readability */
+    font-size: 0.9rem; /* Adjust the font size for better readability */
   }
 }
 
 @media only screen and (max-width: 480px) {
   .home h2 {
-    font-size: 2rem; /* Further reduce font size for smaller screens */
+    font-size: 1.6rem; /* Further reduce font size for smaller screens */
   }
 
   .home p {
@@ -1640,7 +1703,7 @@ textarea {
 .web-features h1 {
   color: var(--first-color);
   font-size: 2.3rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .web-features .fea-box h3 {
@@ -1652,13 +1715,13 @@ textarea {
 
 .web-features .fea-box p {
   font-weight: 300;
-  color: rgb(255, 255, 255,0.7);
+  color: rgb(255, 255, 255, 0.7);
 }
 
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
   .web-features h1 {
-    font-size: 2rem; /* Smaller heading for tablets */
+    font-size: 1.5rem; /* Smaller heading for tablets */
   }
 
   .web-features .fea-base {
@@ -1680,7 +1743,7 @@ textarea {
 
 @media only screen and (max-width: 480px) {
   .web-features h1 {
-    font-size: 1.8rem; /* Further reduce heading size for phones */
+    font-size: 1.5rem; /* Further reduce heading size for phones */
   }
 
   .web-features .fea-box {
@@ -1698,26 +1761,21 @@ textarea {
 
 /* === PROGRESS TIMELINE WEB-APP SECTION, APPROACH TO SOLUTIONS ==== */
 
-.progress i{
+.progress i {
   width: 80px;
   margin: 300px auto;
   font-size: 2.3rem;
-  
 }
 
-
-
-.progress ul{
+.progress ul {
   text-align: center;
 }
 
-.progress ul li{
+.progress ul li {
   display: inline-block;
   width: 150px;
   position: relative;
 }
-
-
 
 .fea-box-2 {
   text-align: start;
@@ -1728,16 +1786,13 @@ textarea {
   color: var(--first-color);
 }
 
-.progress p{
+.progress p {
   font-size: 14px;
   margin-top: 15px;
   margin-right: 5px;
   text-align: center;
-  color: rgb(255, 255, 255,0.7);
+  color: rgb(255, 255, 255, 0.7);
 }
-
-
-
 
 /* Media Queries for smaller screens */
 @media (max-width: 600px) {
@@ -1780,21 +1835,7 @@ textarea {
   }
 }
 
-
 /* ==== TECHNOLOGY WE USE SECTION ===== */
-
-
-/* .logos-slide{
-  display: inline-block;
-}
-.logos-slide img{
-  height: 50px;
-  margin: 0 40px 40px;
-  
-
-} */
-
-
 
 .logos {
   overflow: hidden;
@@ -1809,7 +1850,7 @@ textarea {
   height: 70px;
   margin: 0 40px 40px;
   filter: grayscale(100%); /* Make the image gray initially */
-  transition: filter 0.3s ease; 
+  transition: filter 0.3s ease;
 }
 
 .logos-slide img:hover {
@@ -1833,17 +1874,27 @@ textarea {
   }
 }
 
+/* === MOBILE APP DEV SECTION ===== */
+
+.home-mobile {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/mobile-dev.jpg");
+}
+
+/* === UI/UX SECTION ==== */
+
+.home-ux {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/ui-ux.png");
+}
+
+.logos-slide .design {
+  filter: grayscale(0%);
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* ====  FONT FAMILY FOR HEADERS ==== */
+h1,h2,h3,h4{
+  font-family: Futura;
+  
+}
