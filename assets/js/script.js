@@ -23,28 +23,6 @@ document.getElementById('navToggle').addEventListener('click', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // === Scrolling Animation ====
 const scrollers = document.querySelectorAll('.scroller')
 
@@ -57,9 +35,6 @@ function addAnimation(){
     scroller.setAttribute("data-animated",true)
   })
 }
-
-
-
 
 
 
@@ -101,4 +76,50 @@ radios.forEach((radio) => {
         }, 10000);
     });
 });
+
+
+
+// ===== PRICE RANGE FEATURE ======
+
+document.addEventListener('DOMContentLoaded', function() {
+  const solutionType = document.getElementById('solution-type');
+  const priceRangeContainer = document.getElementById('price-range-container');
+  const priceRangeInput = document.getElementById('price-range');
+  const priceDisplay = document.getElementById('price-display');
+
+  // Price ranges for each solution type
+  const priceRanges = {
+    web: { min: 500, max: 5000, step: 100 },
+    mobile: { min: 1000, max: 7000, step: 100 },
+    desktop: { min: 1500, max: 10000, step: 100 }
+  };
+
+  // Display price when range input changes
+  priceRangeInput.addEventListener('input', function() {
+    priceDisplay.textContent = `${priceRangeInput.value} USD`;
+  });
+
+  // Update price range input based on selected solution type
+  solutionType.addEventListener('change', function() {
+    const selectedSolution = solutionType.value;
+
+    if (selectedSolution && priceRanges[selectedSolution]) {
+      // Set the range attributes based on the selected solution
+      const { min, max, step } = priceRanges[selectedSolution];
+      priceRangeInput.min = min;
+      priceRangeInput.max = max;
+      priceRangeInput.step = step;
+      priceRangeInput.value = min; // Set initial value to the minimum
+
+      // Update display and show the price range container
+      priceDisplay.textContent = `${min} USD`;
+      priceRangeContainer.style.display = 'block';
+    } else {
+      // Hide price range container if no solution selected
+      priceRangeContainer.style.display = 'none';
+    }
+  });
+});
+
+
 

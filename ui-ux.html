@@ -21,198 +21,78 @@
   </head>
   <body>
     <!-- === NAVIGATION === -->
-    <header class="header">
-      <nav class="nav container">
-        <div class="nav__data">
-          <a href="" class="nav__logo">
-            Infinite-Tech
-            <i class="ri-code-box-line"></i>
-          </a>
-          <div class="nav__toggle" id="nav-toggle">
-            <i class="ri-menu-line nav__toggle-menu"></i>
-            <i class="ri-close-line nav__toggle-close"></i>
-          </div>
-        </div>
-        <!-- ==== nav menu == -->
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li>
-              <a href="index.html" class="nav__link">Home</a>
-            </li>
-            <!-- ==== dropdown 1 === -->
-            <li class="dropdown__item">
-              <div class="nav__link dropdown__button">
-                Services<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-              </div>
+      
+    <!-- === NAVIGATION === -->
+   
+    <div class="toggle" id="navToggle">
+      <span class="hamburger">&#9776;</span>
+      <span class="close" style="display: none;">&times;</span>
 
-              <div class="dropdown__container">
-                <div class="dropdown__content">
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-shield-flash-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Most viewed services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="web-app.html" class="dropdown__link">Web Application </a>
-                      </li>
-                      <li>
-                        <a href="mobile-app.html" class="dropdown__link"
-                          >Mobile Application (Android, iOS, Cross-Platform)</a
-                        >
-                      </li>
-                      <li>
-                        <a href="ui-ux.html" class="dropdown__link">UI/UX design</a>
-                      </li>
-                    </ul>
-                  </div>
+     
+  </div>
+    <!-- Navigation Area -->
 
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-hand-heart-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Popular Services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link"
-                          >MVP development and re-engineering
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link"
-                          >Cloud Development and Migration
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link"
-                          >Software prototyping and Audit
-                        </a>
-                      </li>
+    
+    <ul class="nav-area" id="navArea">
+        <!-- Navigation Items -->
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">Services</a>
+            <div class="sub-nav">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="web-app.html">Web App</a></li>
+                        <li><a href="mobile-app.html">Mobile App (Android, iOS, Cross-Platform)</a></li>
+                        <li><a href="ui-ux.html">UI/UX Design</a></li>
+                        <li><a href="mvp.html">MVP Development and Re-engineering</a></li>
+                        <li><a href="cloud.html">Cloud Development and Migration</a></li>
+                        <li><a href="prototype.html">Software Prototyping and Audit</a></li>
+                        <li><a href="pen-test.html">Penetration Testing</a></li>
+                        <li><a href="ai.html">AI Consulting (Generative AI, Machine Learning, Conversational AI)</a></li>
+                        <li><a href="bot.html">ChatBot Development</a></li>
+                        <li><a href="outsource.html">Outsourcing Team</a></li>
                     </ul>
-                  </div>
-
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-codepen-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Consulting Services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link"
-                          >Penetration Testing
-                        </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link"
-                          >AI Consulting (Generative AI & Machine Learning)</a
-                        >
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link"
-                          >Chat Box development
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-terminal-window-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Outsource Services</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Outsourcing Team</a>
-                      </li>
-                    </ul>
-                  </div>
                 </div>
-              </div>
-            </li>
-            <!-- ==== dropdown 2 -->
-            <!-- <li class="dropdown__item">
-              <div class="nav__link dropdown__button">
-                Industries<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-              </div>
-              <div class="dropdown__container">
-                <div class="dropdown__content">
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-base-station-fill"></i>
-                    </div>
-                    <span class="dropdown__title">Sectors</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Healthcare </a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Travel and Leisure</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Restaurants</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Fintech</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Others</a>
-                      </li>
+            </div>
+        </li>
+        <li><a href="#">About Us</a></li>
+        <li>
+            <a href="#">Industries</a>
+            <div class="sub-nav">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="healthcare.html">Healthcare</a></li>
+                        <li><a href="travel.html">Travel and Leisure</a></li>
+                        <li><a href="restaurant.html">Restaurants</a></li>
+                        <li><a href="fintech.html">Fintech</a></li>
+                        
                     </ul>
-                  </div>
                 </div>
-              </div>
-            </li> -->
-
-            <!-- === dropdown 3 -->
-            <!-- <li class="dropdown__item">
-              <div class="nav__link dropdown__button">
-                Resources<i class="ri-arrow-down-s-line dropdown__arrow"></i>
-              </div>
-              <div class="dropdown__container">
-                <div class="dropdown__content">
-                  <div class="dropdown__group">
-                    <div class="dropdown__icon">
-                      <i class="ri-android-fill"></i>
-                    </div>
-                    <span class="dropdown__title">App Development</span>
-                    <ul class="dropdown__list">
-                      <li>
-                        <a href="" class="dropdown__link">Fintech software development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Trading platform development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Lending software development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">E-wallet app development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Banking software development</a>
-                      </li>
-                      <li>
-                        <a href="" class="dropdown__link">Crowdfunding platform development</a>
-                      </li>
+            </div>
+        </li>
+        <li>
+            <a href="#">Resources</a>
+            <div class="sub-nav">
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="#">Blog1</a></li>
+                        <li><a href="#">Blog2</a></li>
+                        <li><a href="#">Blog3</a></li>
+                        <li><a href="#">Blog4</a></li>
+                        <li><a href="#">Blog5</a></li>
                     </ul>
-                  </div>
                 </div>
-              </div>
-            </li> -->
+            </div>
+        </li>
+        <li><a href="#">Contact</a></li>
+    
+        <!-- Logo on the Right Side -->
+        
+    </ul>
 
-            <li>
-              <a href="about.html" class="nav__link">About us</a>
-            </li>
-            <li>
-              <a href="contact.html" class="nav__link">Contact us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
 
     <section class="home home-ux">
-      <h2>UI/UX design services</h2>
+      <h2>UI/UX Design Services</h2>
       <p>
         Backed by expert professionals, our team delivers exceptional UI/UX design services for web and mobile applications. We specialize in effectively engaging your audience with your product. Prioritizing project architecture and user needs, we create intuitive user flows that result in a unique and seamless interface.
       </p>
@@ -243,147 +123,72 @@
           </p>
         </div>
 
-        <!-- <div class="fea-box">
-          <i class="ri-codepen-line"></i>
-          <h3>Cross-platform app development</h3>
-          <p>
-            With expertise in frameworks like React Native and Flutter, we create versatile mobile applications that are compatible with both iOS and Android platforms. This strategy guarantees cost-effectiveness and quicker time-to-market while maintaining high quality.
-          </p>
-        </div> -->
-
-
-       
-
-       
-
-       
-
-
-
-
-
-
       </div>
     </section>
 
 
-    <!-- === APPROACH TO SOLUTIONS SECTION ==== -->
-    <section class="web-features">
-      <h1>Our Process to UI/UX Solution Development</h1>
-      <p>Delivering top-notch UI/UX design services requires a well-defined and structured process. While certain stages may be skipped depending on the project's starting point, our complete process is as follows:</p>
-      <div class="fea-base fea-base-two">
-        <div class="fea-box-2 progress">
-          <ul>
-            <li>
-              <i class="ri-survey-line img"></i><br>
-              
-              <p>Research</p>
-            
-            </li>
-            <li><i class="ri-chat-history-line img"></i><br>
-              
-              <p>User Stories</p>
-            </li>
-            <li><i class="ri-pages-line img"></i><br>
-           
-              <p>Sitemap</p>
-            </li>
-            <li><i class="ri-microsoft-line img"></i><br>
-              
-              <p>Wireframes</p>
-            </li>
-            <li><i class="ri-glasses-line img"></i><br>
-             
-              <p>Visual Research</p>
-            </li>
-            <li><i class="ri-pen-nib-line img"></i><br>
-              
-              <p>UI Design</p>
-            </li>
-          </ul>
+   <!-- ==== ALTERNATE SECTIONS ==== -->
+
+<div class="health-base-feature web-app-feature">
+  <div class="feature-box">
+    <div class="features">
+       <h1>End-to-end UI/UX design services delivering value at every stage of the user experience journey.</h1>
+       <div class="features-desc">
+        <div class="feature-icon">
+          <!-- <i class="ri-restaurant-line"></i> -->
         </div>
-      </div>
-    </section>
-
-
-
-
-<!-- ==== TECHNOLOGIES WE USE ==== -->
-<section class="web-features">
-  <h1>Tools we use</h1>
-  <p>Here are the tools we utilize for our UI/UX design services.</p>
+        <div class="feature-text">
   
-  <div class="fea-base fea-base-two">
-
-    <div class="logos">
-      <div class="logos-slide">
-        <img src="./assets/images/figma.jpg" alt="" class="img img-1 design">
-
-        <img src="./assets/images/adobe-illustrate.png" alt="" class="img img-3 design">
-        <img src="./assets/images/photoshop-logo.png" alt="" class="img img-4 design">
-
-
-
-       
-       
-        
-      </div>
+          <p class="web-app-para">
+            Organizations often face challenges with complex digital environments, where a blend of web, SaaS, and legacy systems can strain resources. Managing multiple interfaces may hinder scalability, user experience, and security. Our UI/UX design services help clients reimagine their digital landscape for greater efficiency, flexibility, and engagement. Covering every stage—from design and modernization to optimization and ongoing support—we serve as a strategic partner, ensuring secure, seamless experiences and streamlined processes.</p>
+        </div>
+       </div>
+  
     </div>
-    
-    
+    <div class="features-img">
+  <img src="./assets/images/ui-ux3.jpg" alt="ui/ux">
+      
+   </div>
   </div>
-</section>
+  </div>
 
 
-<!-- === BENEFITS OF WEB APP DEVELOPMENT === -->
-
-<!-- <section class="web-features">
-  <h1>The Value of Custom Web Application Solutions</h1>
-  <p>Here’s how your business can gain a competitive edge through web application development.</p>
-  
-  <div class="fea-base fea-base-two">
 
 
-    <section class="hover-container">
-      <div class="cards-grid">
-        <div class="card-hover">
-          <div class="img-hover-box">
-            <img src="./assets/images/secure.jpg" alt="">
+
+
+
+
+  <div class="health-base-feature">
+    <div class="feature-box">
+
+      <div class="features-img">
+        <img src="./assets/images/ui-ux5.jpg" alt="ui/ux">
+            
+         </div>
+      <div class="features">
+         <h1>Are you looking for tailored UI/UX solutions that integrate effortlessly with your existing software ecosystem?</h1>
+         <div class="features-desc">
+          <div class="feature-icon">
+            
           </div>
-          <div class="card-content">
-          <h1 class="card-heading-hover">Security</h1>
-          <p class="card-text-hover">High-quality web applications offer strong security and are managed from a centralized location.</p>
-        </div>
-        </div>
-
-
-        <div class="card-hover">
-          <div class="img-hover-box">
-            <img src="./assets/images/adaptable.jpg" alt="">
+          <div class="feature-text">
+    
+            <p><a href="contact.html">Get in touch</a></p>
           </div>
-          <div class="card-content">
-          <h1 class="card-heading-hover">Scalability</h1>
-          <p class="card-text-hover">Handling large volumes of data is seamless and free of bugs, making scaling effortless.</p>
-        </div>
-        </div>
-
-        <div class="card-hover">
-          <div class="img-hover-box">
-            <img src="./assets/images/secure.jpg" alt="">
-          </div>
-          <div class="card-content">
-          <h1 class="card-heading-hover">Adaptability</h1>
-          <p class="card-text-hover">
-            Your future web app will operate with minimal downtime across all platforms.</p>
-          </div>
-        </div>
+         </div>
+    
       </div>
-    </section>
-    
-    
-    
-  </div>
-</section> -->
+     
+    </div>
+    </div>
+
+
+
+
+
+
+
 
 
 
@@ -435,14 +240,13 @@
           </div>
 
           <div class="footer-col">
-            <h4>Blogs</h4>
-            <ul>
-              <li><a href="">blog 1</a></li>
-              <li><a href="">blog 2</a></li>
-              <li><a href="">blog 3</a></li>
-              <li><a href="">blog 4</a></li>
-              <li><a href="">blog 5</a></li>
-            </ul>
+            <h4>Follow us</h4>
+            <div class="social-links">
+              <a href=""><i class="ri-twitter-x-line"></i></a>
+              <a href=""><i class="ri-linkedin-box-fill"></i></a>
+              <a href=""><i class="ri-instagram-line"></i></a>
+              <a href=""><i class="ri-facebook-circle-fill"></i></a>
+            </div>
           </div>
 
           <div class="footer-col">
@@ -457,15 +261,7 @@
             </ul>
           </div>
 
-          <div class="footer-col">
-            <h4>Follow us</h4>
-            <div class="social-links">
-              <a href=""><i class="ri-twitter-x-line"></i></a>
-              <a href=""><i class="ri-linkedin-box-fill"></i></a>
-              <a href=""><i class="ri-instagram-line"></i></a>
-              <a href=""><i class="ri-facebook-circle-fill"></i></a>
-            </div>
-          </div>
+        
         </div>
       </div>
     </footer>
