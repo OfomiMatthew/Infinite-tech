@@ -1,9 +1,4 @@
-
-
 // ======= NAVIGATION ======
-
-
-
 
 document.getElementById('navToggle').addEventListener('click', function() {
   const navArea = document.getElementById('navArea');
@@ -122,4 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// === FAQ DROPDOWN PART ==
+const faqs = document.querySelectorAll('.faq')
+faqs.forEach((faq)=>{
+  faq.addEventListener('click',()=>{
+    faq.classList.toggle('active');
+  })
+})
 

@@ -252,6 +252,34 @@ a {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ---- ====== HERO SECTION ====== ------- */
 
 .wrapper {
@@ -739,7 +767,7 @@ input:checked + label .description {
 .web-features,
 .course,
 .service-health,.health-base-feature,
-.benefit-container {
+.benefit-container, .bank-solution {
   scale: 0.3;
   opacity: 0;
   animation: fade-In 3s ease forwards;
@@ -1014,7 +1042,7 @@ iframe {
   width: 100%;
   /* background-image:linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.9)),url('../images/world.gif'); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../images/web-dev-meet.jpg");
+    url("../images/about.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
@@ -1028,7 +1056,7 @@ iframe {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.2rem;
+  font-size: 3.5rem;
   font-weight: 500;
   animation: fadeInUp 2s ease;
 }
@@ -1286,6 +1314,24 @@ iframe {
 
 /* === CONTACT US SUB-SECTION ==== */
 
+
+.contact {
+  height: 60vh;
+  width: 100%;
+  /* background-image:linear-gradient(rgba(4,9,30,0.9),rgba(4,9,30,0.9)),url('../images/world.gif'); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../images/contact.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--first-color);
+}
+
+
+
+
 .contact-us {
   width: 80%;
   margin: auto;
@@ -1383,9 +1429,6 @@ iframe {
 
 
 
-
-
-
 /* Base styling for input and textarea */
 .input, textarea {
   width: 100%;
@@ -1422,6 +1465,129 @@ textarea:focus {
 
 
 
+
+/* === CONTACT US SUB-SECTION (APPENDED CONTACT) ==== */
+
+.contact-us {
+  width: 60%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.row-contact {
+  display: flex;
+  flex-direction: column;  /* Change from row to column */
+  gap: 30px;  /* Adds space between the sections */
+}
+
+.contact-col {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-col h2 {
+  font-weight: 400;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.contact-col div i {
+  font-size: 28px;
+  color: var(--first-color);
+  margin-right: 20px;
+}
+
+.contact-col div h5 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.contact-col div p {
+  padding: 0;
+}
+
+.input {
+  display: block;
+}
+
+.input,
+.contact-col textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background: var(--first-color);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+}
+
+.submit-btn:hover {
+  color: var(--first-color);
+  background: #fff;
+}
+
+.contact-col-1 {
+  animation: fadeInUp 2s ease;
+}
+
+.contact-col-2 {
+  animation: fadeInRight 2s ease;
+}
+
+/* Base styling for input and textarea */
+.input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out; /* Smooth transition for focus effects */
+}
+
+/* Placeholder styling */
+.input::placeholder,
+textarea::placeholder {
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Animates the placeholder */
+  opacity: 0.8; /* Initial opacity */
+  transform: translateX(0); /* Initial position */
+}
+
+/* Placeholder animation on input or textarea focus */
+.input:focus::placeholder,
+textarea:focus::placeholder {
+  transform: translateX(10px); /* Moves placeholder 10px to the right on focus */
+  opacity: 0.5; /* Optional: reduce opacity on focus */
+}
+
+/* Optional: styling for focused input and textarea borders */
+.input:focus,
+textarea:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: var(--first-color); /* Change border color on focus */
+}
 
 
 
@@ -2320,10 +2486,12 @@ opacity: 1;
   width: 100%;
   height: 600px;
   border-radius: 100%;
+  animation: fade  1.5s ease-in-out;
 }
 
 .main-hero-text{
   width: 80%;
+  animation: fade  1.5s ease-in-out;
 }
 
 .main-hero-text h1{
@@ -2365,6 +2533,7 @@ main .main-p {
   color: #666; /* Choose a subtle color for the breadcrumb */
   margin: 0; /* Remove default margins */
   padding: 10px 0; /* Add some vertical spacing */
+  animation: fade  1.5s ease-in-out;
 }
 
 main .main-p a {
@@ -2387,29 +2556,6 @@ main .main-p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* General adjustments for smaller screens */
 @media (max-width: 768px) {
   .main-container {
@@ -2425,13 +2571,16 @@ main .main-p {
     height: auto; /* Let the image maintain its aspect ratio */
     max-width: 100%; /* Limit the width to the container */
     border-radius: 50%; /* Maintain circular shape */
+    
   }
 
   .main-hero-text {
     width: 100%; /* Make the text container take the full width */
+    
   }
 
   .main-hero-text h1 {
+    
     font-size: 2.5rem; /* Reduce font size for better readability */
   }
 
@@ -2466,3 +2615,117 @@ main .main-p {
     padding: 8px 12px; /* Adjust padding for smaller buttons */
   }
 }
+
+
+
+/* === BANK SOLUTIONS FAQ PART === */
+.bank-solution{
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  background: #000;
+  color: #fff;
+
+  padding: 1rem;
+}
+
+.bank-solution h2{
+  font-size: 2.5rem;
+  margin: 2rem 0rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.faq{
+  max-width: 700px;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+}
+
+.question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question h3{
+font-size: 1.5rem;
+font-weight: 500;
+transition: color 1.2s ease-in;
+}
+
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease;
+}
+
+.answer p{
+  padding-top: 1rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  
+}
+
+.faq.active .answer{
+  max-height: 300px;
+  animation: fade  1s ease-in-out;
+}
+
+.faq.active i{
+  transform: rotate(180deg);
+  color: var(--first-color);
+}
+
+.faq.active h3{
+  color: #f0bf6a;
+}
+
+i{
+  transition: transform .5s ease-in;
+}
+
+
+@keyframes fade{
+  from{
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+
+/* Media query for larger devices */
+@media (max-width: 768px) {
+  .bank-solution h2 {
+    font-size: 2rem; /* Restore larger font size for tablets and up */
+    margin: 2rem 0;
+    color: var(--first-color);
+  }
+
+  .faq {
+    max-width: 700px; /* Set max width for larger screens */
+    margin-top: 2rem;
+  }
+
+  .question {
+    flex-direction: row; /* Restore the horizontal layout */
+    align-items: center;
+  }
+
+  .question h3 {
+    font-size: 1.5rem; /* Restore font size */
+  }
+}
+
