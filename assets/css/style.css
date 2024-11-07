@@ -280,6 +280,7 @@ a {
 
 
 
+
 /* ---- ====== HERO SECTION ====== ------- */
 
 .wrapper {
@@ -359,7 +360,6 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
-
   height: 80px;
   width: 520px;
   opacity: 0;
@@ -372,13 +372,20 @@ a {
   color: var(--first-color-lighten);
   padding: 5px;
   margin-bottom: 50px;
+ 
 }
 
 .description h4 {
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: var(--first-color);
+ 
+}
+
+.description p, .description h4{
+  position: relative;
+  bottom: 200px;
 }
 
 input {
@@ -423,6 +430,139 @@ input:checked + label .description {
   z-index: 2;
 }
 
+
+
+
+/* Tablet Breakpoint */
+@media screen and (max-width: 1024px) {
+  .card {
+    min-height: 350px;
+  }
+
+  input:checked + label {
+    width: 500px;
+  }
+
+  .card > .row > .description {
+    width: 400px;
+  }
+
+  .description h4 {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 10px;
+    height: auto;
+  }
+
+  .container-1 {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    margin: 5px 0;
+    border-radius: 0.5rem;
+  }
+
+  input:checked + label {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card > .row {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .card > .row > .icon {
+    margin: 10px;
+  }
+
+  .card > .row > .description {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .description h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    bottom: 0;
+  }
+
+  .description p {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    bottom: 0;
+  }
+
+  /* Reset the bottom positioning for mobile */
+  .description p, .description h4 {
+    position: static;
+  }
+}
+
+/* Small Mobile Breakpoint */
+@media screen and (max-width: 480px) {
+  .card {
+    min-height: 150px;
+  }
+
+  .description h4 {
+    font-size: 1.2rem;
+  }
+
+  .description p {
+    font-size: 0.8rem;
+  }
+
+  .card > .row > .icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Handle animation for mobile */
+@media (hover: none) {
+  .card {
+    transition: 0.3s ease;
+  }
+}
+
+/* Improve touch experience */
+@media (pointer: coarse) {
+  .card {
+    cursor: default;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* === WHAT WE DO SECTION ===== */
 .work-body {
   background: #000;
@@ -453,7 +593,7 @@ input:checked + label .description {
 .work-body .work-do {
   color: #fff;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   padding-top: 30px;
   font-weight: 500;
 }
@@ -509,8 +649,12 @@ input:checked + label .description {
 .text-box {
   padding: 20px 30px;
   position: relative;
-
+  transition: transform 0.5s, background-color 0.5s;
   font-size: 15px;
+}
+
+.text-box:hover{
+  transform: scale(1.05);
 }
 
 .left-container {
@@ -521,6 +665,7 @@ input:checked + label .description {
 
 .right-container {
   left: 55%;
+  cursor: pointer;
 }
 
 .container-2 i {
@@ -597,6 +742,8 @@ input:checked + label .description {
     margin: 50px auto;
   }
 
+ 
+
   /* Ensure the container width takes full screen on smaller devices */
   .container-2 {
     width: 90%; /* Add some space on the sides */
@@ -639,6 +786,8 @@ input:checked + label .description {
   .right-container {
     left: 0 !important; /* Align all containers centrally */
   }
+
+ 
 }
 
 /* ========== WHY CHOSE US ============== */
@@ -659,7 +808,7 @@ input:checked + label .description {
 }
 
 .container-4 .choose{
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .container-4 h1::after {
@@ -704,7 +853,7 @@ input:checked + label .description {
 
 .service:hover {
   background-color: #000;
-  color: var(--first-color);
+  /* color: var(--first-color); */
   transform: scale(1.05);
 }
 
@@ -719,6 +868,10 @@ input:checked + label .description {
   .container-4 h1 {
     font-size: 24px; /* Reduce title size */
     margin-bottom: 30px;
+  }
+
+  .container-4 .choose{
+    font-size: 2rem;
   }
 
   .service {
@@ -874,6 +1027,7 @@ input:checked + label .description {
 @media (max-width: 768px) {
   .solutions {
     margin-top: 40px;
+    
   }
   .wrapper-1 {
     height: 80px;
@@ -911,6 +1065,13 @@ input:checked + label .description {
     margin-bottom: -30px;
   }
 }
+
+
+
+
+
+
+
 
 /* ==== FOOTER SECTION ===== */
 

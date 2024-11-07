@@ -18,6 +18,9 @@ document.getElementById('navToggle').addEventListener('click', function() {
 
 
 
+
+
+
 // === Scrolling Animation ====
 const scrollers = document.querySelectorAll('.scroller')
 
