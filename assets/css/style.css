@@ -208,10 +208,21 @@ a {
 /* Styles for mobile devices */
 @media (max-width: 480px) {
   .nav-area {
-    width: 100%; /* Full width on mobile */
-    left: -100%; /* Hide off-screen initially */
+    font-size: 1.3rem;
+    width: 50%; /* Full width on mobile */
+    left: -90%; /* Hide off-screen initially */
     transition: left 0.3s ease; /* Smooth transition for the menu */
+    z-index: 10;
   }
+
+  /* modification for mobile responsiveness */
+  .nav-area > li > .sub-nav{
+    font-size: 0.5rem;
+    left: 150px;
+    z-index: -1;
+
+  }
+  
 
   .nav-active {
     left: 0; /* Show the menu when active */
