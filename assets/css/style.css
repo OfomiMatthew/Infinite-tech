@@ -224,11 +224,19 @@ a {
     left: 65px;
     z-index: -1;
     /* padding: -30px; */
+     display: flex;
+  justify-content: flex-start;
+  align-items: center;
   }
 
 
   /* vertical scrolling */
- 
+ .sub-menu li{
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
+  /* flex-wrap: wrap; */
+ }
 
   
 
@@ -264,33 +272,6 @@ a {
     
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
