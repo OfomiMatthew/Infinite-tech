@@ -79,6 +79,51 @@ radios.forEach((radio) => {
 
 // ===== PRICE RANGE FEATURE ======
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   const solutionType = document.getElementById('solution-type');
+//   const priceRangeContainer = document.getElementById('price-range-container');
+//   const priceRangeInput = document.getElementById('price-range');
+//   const priceDisplay = document.getElementById('price-display');
+
+//   // Price ranges for each solution type
+//   const priceRanges = {
+//     web: { min: 500, max: 20000, step: 100 },
+//     mobile: { min: 3000, max: 20000, step: 100 },
+//     mobile_hybrid: { min: 5000, max: 20000, step: 100 },
+//     web_app: { min: 2000, max: 10000, step: 100 },
+//     mvp: { min: 5000, max: 20000, step: 100 },
+//     ai_ml: { min: 50000, max: 150000, step: 100 }
+//   };
+
+//   // Display price when range input changes
+//   priceRangeInput.addEventListener('input', function() {
+//     priceDisplay.textContent = `$ ${priceRangeInput.value}`;
+//   });
+
+//   // Update price range input based on selected solution type
+//   solutionType.addEventListener('change', function() {
+//     const selectedSolution = solutionType.value;
+
+//     if (selectedSolution && priceRanges[selectedSolution]) {
+//       // Set the range attributes based on the selected solution
+//       const { min, max, step } = priceRanges[selectedSolution];
+//       priceRangeInput.min = min;
+//       priceRangeInput.max = max;
+//       priceRangeInput.step = step;
+//       priceRangeInput.value = min; // Set initial value to the minimum
+
+//       // Update display and show the price range container
+//       priceDisplay.textContent = `$ ${min}`;
+//       priceRangeContainer.style.display = 'block';
+//     } else {
+//       // Hide price range container if no solution selected
+//       priceRangeContainer.style.display = 'none';
+//     }
+//   });
+// });
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
   const solutionType = document.getElementById('solution-type');
   const priceRangeContainer = document.getElementById('price-range-container');
@@ -87,37 +132,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Price ranges for each solution type
   const priceRanges = {
-    web: { min: 500, max: 5000, step: 100 },
-    mobile: { min: 1000, max: 7000, step: 100 },
-    desktop: { min: 1500, max: 10000, step: 100 }
+      web: { min: 500, max: 20000, step: 100 },
+      mobile: { min: 3000, max: 20000, step: 100 },
+      mobile_hybrid: { min: 5000, max: 20000, step: 100 },
+      web_app: { min: 2000, max: 10000, step: 100 },
+      mvp: { min: 5000, max: 20000, step: 100 },
+      ai_ml: { min: 50000, max: 150000, step: 100 }
   };
+
+  // Function to format number with commas
+  function formatNumber(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
 
   // Display price when range input changes
   priceRangeInput.addEventListener('input', function() {
-    priceDisplay.textContent = `${priceRangeInput.value} USD`;
+      // Check if current value equals maximum value
+      const isAtMax = parseInt(priceRangeInput.value) === parseInt(priceRangeInput.max);
+      // Format the number with commas and add plus symbol if at max
+      const formattedPrice = formatNumber(priceRangeInput.value);
+      priceDisplay.textContent = `$ ${formattedPrice}${isAtMax ? '+' : ''}`;
   });
 
   // Update price range input based on selected solution type
   solutionType.addEventListener('change', function() {
-    const selectedSolution = solutionType.value;
-
-    if (selectedSolution && priceRanges[selectedSolution]) {
-      // Set the range attributes based on the selected solution
-      const { min, max, step } = priceRanges[selectedSolution];
-      priceRangeInput.min = min;
-      priceRangeInput.max = max;
-      priceRangeInput.step = step;
-      priceRangeInput.value = min; // Set initial value to the minimum
-
-      // Update display and show the price range container
-      priceDisplay.textContent = `${min} USD`;
-      priceRangeContainer.style.display = 'block';
-    } else {
-      // Hide price range container if no solution selected
-      priceRangeContainer.style.display = 'none';
-    }
+      const selectedSolution = solutionType.value;
+  
+      if (selectedSolution && priceRanges[selectedSolution]) {
+          // Set the range attributes based on the selected solution
+          const { min, max, step } = priceRanges[selectedSolution];
+          priceRangeInput.min = min;
+          priceRangeInput.max = max;
+          priceRangeInput.step = step;
+          priceRangeInput.value = min; // Set initial value to the minimum
+  
+          // Update display and show the price range container
+          // Format the initial value with commas
+          const formattedPrice = formatNumber(min);
+          priceDisplay.textContent = `$ ${formattedPrice}`;
+          priceRangeContainer.style.display = 'block';
+      } else {
+          // Hide price range container if no solution selected
+          priceRangeContainer.style.display = 'none';
+      }
   });
 });
+
+
+
+
 
 
 // === FAQ DROPDOWN PART ==

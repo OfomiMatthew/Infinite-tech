@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,7 +32,7 @@
     
     <ul class="nav-area" id="navArea">
         <!-- Navigation Items -->
-        <li><a href="index">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li>
             <a href="#">Services</a>
             <div class="sub-nav">
@@ -152,16 +153,19 @@
   <label for="solution-type">Select Solution Type</label>
   <select id="solution-type" name="solution-type" class="input">
     <option value="">Select Solution</option>
-    <option value="web">Web App</option>
-    <option value="mobile">Mobile App</option>
-    <option value="desktop">Desktop App</option>
+    <option value="web">Web Development</option>
+    <option value="mobile">Mobile application (android or iOS)</option>
+    <option value="mobile_hybrid">Mobile application (hybrid)</option>
+    <option value="web_app">Web Application</option>
+    <option value="mvp">MVP development</option>
+    <option value="ai_ml">AI/ML development</option>
   </select>
 
   <!-- Price Range Container -->
   <div id="price-range-container" style="display: none;">
     <label for="price-range">Select Price Range</label>
-    <input type="range" id="price-range" name="price-range" class="input" min="0" max="10000" step="100" value="0">
-    <span id="price-display">0 USD</span>
+    <input type="range" id="price-range" name="price-range" class="input" min="0" max="50000" step="100" value="0">
+    <span id="price-display"></span>
   </div>
 
 
